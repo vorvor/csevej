@@ -1,0 +1,13 @@
+<?php
+
+function basic_custom_module_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+	if ($form_id == 'contact_message_feedback_form') {
+		$form['message']['widget'][0]['value']['#title'] = 'Üzenet';
+		$form['subject']['widget'][0]['value']['#title'] = 'Tárgy';
+		$form['name']['#title'] = 'Név';
+		$form['mail']['#title'] = 'E-mail';
+		$form['copy']['#title'] = 'Kérek másolatot';
+		$form['actions']['submit']['#value'] = 'Küldés';
+	}
+}
